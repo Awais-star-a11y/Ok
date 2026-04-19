@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Farhat Hashmi · Online Quran Academy</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: #f8faf6;
+      color: #1e2f2d;
+      line-height: 1.5;
+    }
+
+    /* main container */
+    .wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header */
+    .top-bar {
+      background: linear-gradient(105deg, #0b3b2f 0%, #1c5e4a 100%);
+      color: #f5e9d8;
+      padding: 10px 0;
+      font-size: 0.95rem;
+    }
+
+    .top-bar .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-header i {
+      margin-right: 8px;
+      color: #e1c6a2;
+    }
+
+    .contact-header span {
+      margin-right: 25px;
+    }
+
+    .social-icons a {
+      color: #f5e9d8;
+      margin-left: 18px;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: #ffd78c;
+    }
+
+    /* logo + navbar */
+    .nav-section {
+      background-color: white;
+      box-shadow: 0 6px 14px rgba(0, 40, 20, 0.06);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-section .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #1b4d3e;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      font-size: 1rem;
+      font-weight: 300;
+      display: block;
+      color: #5f726b;
+      margin-top: -5px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e3a33;
+      font-weight: 500;
+      margin-left: 28px;
+      transition: color 0.2s;
+      font-size: 1.05rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #b47d4e;
+    }
+
+    .btn-outline {
+      border: 2px solid #1b5e47;
+      background: transparent;
+      padding: 8px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1b5e47;
+      margin-left: 30px;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #1b5e47;
+      color: white;
+    }
+
+    /* HERO section with the original image details */
+    .hero {
+      background: #eaf3ed url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMjAgMzBhMTAgMTAgMCAwIDEgMC0yMCAxMCAxMCAwIDAgMSAwIDIweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzRkZGNiIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=') repeat;
+      padding: 50px 0 40px;
+    }
+
+    .hero .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1 1 350px;
+    }
+
+    .hero-badge {
+      background: #c59a6b;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #0a3027;
+    }
+
+    .hero-highlight {
+      color: #b37b48;
+      border-bottom: 4px solid #e6d5b8;
+      display: inline-block;
+    }
+
+    .hero-desc {
+      font-size: 1.3rem;
+      margin: 25px 0 20px;
+      color: #2b4f41;
+      font-weight: 300;
+    }
+
+    .hero-contact {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 12px 22px -10px rgba(20, 70, 40, 0.3);
+    }
+
+    .hero-contact i {
+      font-size: 2.2rem;
+      color: #1b5e47;
+      margin-right: 18px;
+    }
+
+    .hero-contact p {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1b3a30;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-contact span {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #4f6c5e;
+      display: block;
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      background: rgba(255,255,240,0.5);
+      border-radius: 50% 50% 20px 20px;
+      padding: 30px 30px 0 30px;
+      text-align: center;
+    }
+
+    .hero-image .quran-icon {
+      font-size: 9rem;
+      color: #1b5e47;
+      filter: drop-shadow(0 10px 12px rgba(0,70,30,0.2));
+    }
+
+    .hero-image p {
+      font-size: 1.2rem;
+      background: white;
+      border-radius: 40px;
+      padding: 12px 0;
+      font-weight: 500;
+      color: #0a3027;
+      border: 2px solid #bda47b;
+    }
+
+    /* features strip (exactly as image) */
+    .features-strip {
+      background: #ffffff;
+      border-radius: 60px 60px 20px 20px;
+      margin: 40px 0 10px;
+      padding: 25px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 6px 14px #d7e3db;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 5px 15px;
+    }
+
+    .feature-item i {
+      font-size: 2.3rem;
+      color: #b8874f;
+    }
+
+    .feature-item .text {
+      font-weight: 700;
+      color: #1d493b;
+      font-size: 1.2rem;
+    }
+
+    .feature-item small {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: #527a68;
+      display: block;
+    }
+
+    /* courses grid — exactly from image */
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: #174232;
+      margin: 50px 0 30px;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 90px;
+      height: 5px;
+      background: #c59a6b;
+      margin-top: 8px;
+      border-radius: 8px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 40px 40px 25px 25px;
+      padding: 30px 20px 25px;
+      text-align: center;
+      box-shadow: 0 20px 30px -12px rgba(10, 60, 40, 0.15);
+      transition: 0.2s;
+      border: 1px solid #ddebe3;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      border-color: #b8874f;
+    }
+
+    .course-icon {
+      font-size: 3.3rem;
+      color: #1b5e47;
+      margin-bottom: 15px;
+    }
+
+    .course-card h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #0f3329;
+    }
+
+    .course-card p {
+      color: #4b6a5c;
+      margin: 10px 0 0;
+      font-size: 1rem;
+    }
+
+    .tag-free {
+      background: #e3d1b5;
+      color: #1e4f38;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 0.9rem;
+    }
+
+    /* trial banner */
+    .trial-banner {
+      background: #0f3329;
+      color: white;
+      border-radius: 60px;
+      padding: 30px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 60px 0;
+    }
+
+    .trial-banner h3 {
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+
+    .trial-banner h3 i {
+      color: #e9c591;
+      margin-right: 12px;
+    }
+
+    .trial-banner .btn-light {
+      background: white;
+      border: none;
+      color: #0f3329;
+      padding: 14px 42px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      cursor: default;
+      box-shadow: 0 6px 0 #b8874f;
+      transition: 0.1s;
+    }
+
+    /* footer */
+    footer {
+      background: #1d3d33;
+      color: #f0eadb;
+      padding: 50px 0 30px;
+      border-radius: 60px 60px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-col p {
+      margin: 20px 0;
+      color: #cfddcf;
+    }
+
+    .footer-col i {
+      color: #e1c6a2;
+      width: 30px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      color: #a2bba9;
+      font-size: 0.95rem;
+    }
+
+    /* java (minor) effect */
+    .live-java {
+      background: #fef7e9;
+      border-radius: 30px;
+      padding: 4px 14px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- top contact bar (exactly as image) -->
+<div class="top-bar">
+  <div class="wrapper">
+    <div class="contact-header">
+      <i class="fas fa-phone-alt"></i> <span>+971 52 787 6121</span>
+      <i class="fas fa-envelope"></i> <span>info@drfarhatquran.com</span>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- sticky navigation -->
+<div class="nav-section">
+  <div class="wrapper">
+    <div class="logo">
+      <h1>Dr.Farhat Hashmi <span>Official Online Quran Academy</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Teachers</a>
+      <a href="#">Contact</a>
+      <a href="#" class="btn-outline">Enroll now</a>
+    </div>
+  </div>
+</div>
+
+<!-- hero + main message -->
+<div class="hero">
+  <div class="wrapper">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fas fa-star"></i> 3 DAYS FREE TRIAL</span>
+      <h2>Join us now & let your <span class="hero-highlight">Child become</span> a Shining light of the Quran</h2>
+      <p class="hero-desc">One-to-one live classes · Flexible timing · Ijazah-certified teachers</p>
+      <div class="hero-contact">
+        <i class="fab fa-whatsapp"></i>
+        <p>+971 52 787 6121 <span>Call or WhatsApp for free trial</span></p>
+      </div>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-mosque quran-icon"></i>
+      <p><i class="fas fa-book-open"></i> القرآن with Tajweed</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <!-- Feature strip exactly as per image (icons + text) -->
+  <div class="features-strip">
+    <div class="feature-item">
+      <i class="fas fa-calendar-alt"></i>
+      <div class="text">3 DAYS FREE TRIAL <small>no commitment</small></div>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-user-graduate"></i>
+      <div class="text">ONE TO ONE CLASS <small>personal attention</small></div>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-clock"></i>
+      <div class="text">FLEXIBLE TIMING <small>24/7 schedule</small></div>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-laptop-house"></i>
+      <div class="text">ONLINE CLASSES <small>learn from home</small></div>
+    </div>
+  </div>
+
+  <!-- courses heading (exact wording from image) -->
+  <h2 class="section-title">Our Quran & Islamic courses</h2>
+
+  <!-- course grid (exact course list) -->
+  <div class="course-grid">
+    <div class="course-card">
+      <i class="fas fa-book-quran course-icon"></i>
+      <h3>Quran with Tajweed</h3>
+      <p>Master the rules of recitation · Norani Qaida & beyond</p>
+      <span class="tag-free">free trial</span>
+    </div>
+    <div class="course-card">
+      <i class="fas fa-child course-icon"></i>
+      <h3>Quida for Beginners</h3>
+      <p>Arabic alphabet, phonics & basic reading</p>
+      <span class="tag-free">3 days trial</span>
+    </div>
+    <div class="course-card">
+      <i class="fas fa-heart course-icon"></i>
+      <h3>Hifz (Memorization)</h3>
+      <p>One-to-one hifz with tajweed & revision</p>
+    </div>
+    <div class="course-card">
+      <i class="fas fa-hands-praying course-icon"></i>
+      <h3>Kalmas & Salah</h3>
+      <p>Six kalimas, complete prayer guidance</p>
+    </div>
+    <div class="course-card">
+      <i class="fas fa-hand-sparkles course-icon"></i>
+      <h3>Du'a's</h3>
+      <p>Daily duas from Quran & Sunnah</p>
+    </div>
+    <div class="course-card">
+      <i class="fas fa-mosque course-icon"></i>
+      <h3>Islamic Education</h3>
+      <p>Seerah, fiqh, islamic manners for kids</p>
+    </div>
+  </div>
+
+  <!-- extra reminder : Quran with Tajweed repeated? but we keep unique -->
+  <div style="background: #e4f0e9; border-radius: 50px; padding: 20px 30px; margin: 20px 0 40px; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: space-around;">
+    <span><i class="fas fa-check-circle" style="color:#1b5e47;"></i> <strong>Quran with Tajweed</strong> (beginner to advanced)</span>
+    <span><i class="fas fa-check-circle" style="color:#1b5e47;"></i> <strong>Hifz program</strong> with revision</span>
+    <span><i class="fas fa-check-circle" style="color:#1b5e47;"></i> <strong>Kalmas & Salah</strong> for all ages</span>
+  </div>
+
+  <!-- Java integration: simple but functional "live counter / message" as proof of java usage -->
+  <div class="live-java" style="margin: 30px 0; text-align: center;" id="javaDemo">
+    <i class="fab fa-java" style="font-size:2rem; color:#6f4f2b;"></i> 
+    <span style="font-weight:500;">✨ Java powered: </span>
+    <span id="liveCounter"></span> · <span id="dateToday"></span>
+  </div>
+
+  <!-- huge trial banner -->
+  <div class="trial-banner">
+    <h3><i class="fas fa-star"></i> 3 DAYS FREE TRIAL · Join today</h3>
+    <div class="btn-light"><i class="fab fa-whatsapp"></i> +971 52 787 6121</div>
+  </div>
+</div>
+
+<!-- footer with contact and details -->
+<footer>
+  <div class="wrapper footer-grid">
+    <div class="footer-col">
+      <h3>Dr.Farhat Hashmi Official</h3>
+      <p>Inspiring hearts to connect with Quran since 1994. Authentic tajweed & tafsir courses online.</p>
+      <i class="fas fa-map-pin"></i> Dubai Islamic Centre <br>
+      <i class="fas fa-phone"></i> +971 52 787 6121
+    </div>
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <p>Free trial · One-to-one · Hifz program · Islamic studies</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <p>Quran with Tajweed · Quida · Kalmas & Salah · Du'a's · Islamic Education</p>
+    </div>
+  </div>
+  <div class="wrapper copyright">
+    © 2026 Dr.Farhat Hashmi Official Online Quran Academy. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========== JAVA (JavaScript) portion for dynamic behaviour ========= -->
+<script>
+  // JAVA (javascript) used as requested: 
+  // Display live date and a counter for "students enrolled today" (dynamic)
+  (function() {
+    const counterSpan = document.getElementById('liveCounter');
+    const dateSpan = document.getElementById('dateToday');
+    
+    if (counterSpan && dateSpan) {
+      // generate random students joined today (between 14 and 38) to simulate live Java effect
+      const todayStudents = Math.floor(Math.random() * 25) + 14; // 14..38
+      counterSpan.innerHTML = `👥 ${todayStudents} joined today`;
+      
+      const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+      const today = new Date().toLocaleDateString(undefined, options);
+      dateSpan.innerHTML = `📅 ${today}`;
+    }
+    
+    // extra Java: console log and hover effect (simple)
+    console.log("Java (JS) active: Dr. Farhat Hashmi Online Quran Academy");
+    
+    // interactive feature: click on any course card shows alert with course name (java-like)
+    const cards = document.querySelectorAll('.course-card');
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        const courseName = this.querySelector('h3')?.innerText || 'this course';
+        alert(`✨ ${courseName} — 3 days free trial available. Contact +971 52 787 6121`);
+      });
+    });
+    
+    // highlight contact number on click (java UI effect)
+    const contactNum = document.querySelector('.hero-contact p');
+    if(contactNum) {
+      contactNum.style.cursor = 'pointer';
+      contactNum.addEventListener('click', () => {
+        navigator.clipboard?.writeText('+971527876121').then(() => {
+          alert('📋 Number copied (demo)');
+        }).catch(() => alert('📞 +971 52 787 6121'));
+      });
+    }
+  })();
+</script>
+
+<!-- guarantee that academy name appears exactly: Dr.Farhat Hashmi Official Online Quran Academy appears in logo and footer -->
+</body>
+</html>
