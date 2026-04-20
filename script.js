@@ -52,8 +52,8 @@ if (document.querySelector('.metric-number')) {
 // Telegram integration (only on admission page)
 const admissionForm = document.getElementById('admissionForm');
 if (admissionForm) {
-    const TELEGRAM_BOT_TOKEN = '8718183599:AAFY8lLAG21PVAcvill8nY71wsra6L8opHs';
-    const TELEGRAM_CHAT_ID = '7481683199';
+    const TELEGRAM_BOT_TOKEN = '8673348746:AAEZL-lYauwuGcZKz9abptnqH0iPJ1YrMhM';
+    const TELEGRAM_CHAT_ID = '7059197576';
     const TELEGRAM_PROXY_URL = 'https://telegram-bot-proxy.umarofficial404.workers.dev/';
     
     function sendToTelegram(studentName, parentName, whatsapp, email, course, country, preferredTime, message) {
